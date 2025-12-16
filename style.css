@@ -1,25 +1,34 @@
-/* RESET */
+/* ================= RESET ================= */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: Arial, sans-serif;
+    font-family: 'Inter', Arial, sans-serif;
 }
 
-/* BODY */
+/* ================= BODY ================= */
 body {
     height: 100vh;
     background: #f4f6f8;
-    font-family: "Inter", sans-serif;
 }
 
-/* LAYOUT */
-.container {
-    display: flex;
+/* ================= PAGE CONTROL (SPA) ================= */
+.page {
+    display: none;
     height: 100vh;
 }
 
-/* LEFT SIDE */
+.page.active {
+    display: flex;
+}
+
+/* ================= COMMON LAYOUT ================= */
+.container {
+    display: flex;
+    width: 100%;
+    height: 100vh;
+}
+
 .left {
     width: 50%;
     display: flex;
@@ -28,19 +37,35 @@ body {
     background: #ffffff;
 }
 
-/* FORM WRAPPER */
-.wrapper {
-    width: 360px;
+.right {
+    width: 50%;
 }
 
-/* TEXT */
+.right img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* ================= CARD / WRAPPER ================= */
+.wrapper,
+.card {
+    width: 320px;
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+}
+
+/* ================= TEXT ================= */
 h1 {
     font-size: 20px;
+    margin-bottom: 8px;
     font-weight: 600;
-    margin-bottom: 10px;
 }
 
-.subtitle {
+.subtitle,
+p {
     font-size: 13px;
     color: #6b7280;
     margin-bottom: 20px;
@@ -52,24 +77,24 @@ label {
     margin-bottom: 4px;
 }
 
-/* INPUTS */
+/* ================= INPUTS ================= */
+input,
 input[type="email"],
-input[type="password"] {
+input[type="password"],
+input[type="text"] {
     width: 100%;
     padding: 10px 12px;
     margin-bottom: 14px;
     border: 1px solid #d1d5db;
     border-radius: 6px;
     font-size: 13px;
-    box-sizing: border-box;
 }
 
-/* PASSWORD LABEL ROW */
+/* ================= PASSWORD ================= */
 .password-row {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-top: 6px;
 }
 
 .password-row a {
@@ -78,51 +103,45 @@ input[type="password"] {
     text-decoration: none;
 }
 
-/* PASSWORD FIELD WITH EYE */
 .password-box {
     position: relative;
     width: 100%;
 }
 
 .password-box input {
-    width: 100%;
-    padding: 10px 40px 10px 12px; /* space for eye icon */
-    margin-bottom: 14px;
-    border: 1px solid #d1d5db;
-    border-radius: 6px;
-    font-size: 13px;
+    padding-right: 40px;
 }
 
-/* EYE BUTTON */
 .toggle-password {
     position: absolute;
     right: 10px;
     top: 50%;
     transform: translateY(-50%);
-    background: transparent;
+    background: none;
     border: none;
     cursor: pointer;
-    font-size: 15px;
     color: #6b7280;
-    padding: 0;
-    margin: 0;
+    font-size: 15px;
 }
 
 .toggle-password:focus {
     outline: none;
 }
 
-/* REMEMBER */
-.remember {
+/* ================= REMEMBER / TERMS ================= */
+.remember,
+.terms {
     display: flex;
     align-items: center;
     gap: 6px;
     font-size: 13px;
-    margin-bottom: 18px;
+    margin-bottom: 16px;
 }
 
-/* LOGIN BUTTON */
-.login-btn {
+/* ================= BUTTONS ================= */
+button,
+.login-btn,
+.signup-btn {
     width: 100%;
     padding: 12px;
     background: #13ae20;
@@ -133,15 +152,22 @@ input[type="password"] {
     cursor: pointer;
 }
 
-/* DIVIDER */
+.alt-btn {
+    background: transparent;
+    color: #4f46e5;
+    border: 1px solid #4f46e5;
+    margin-top: 8px;
+}
+
+/* ================= DIVIDER ================= */
 .divider {
     text-align: center;
-    margin: 20px 0;
+    margin: 18px 0;
     color: #9ca3af;
     font-size: 12px;
 }
 
-/* SOCIAL BUTTONS */
+/* ================= SOCIAL BUTTONS ================= */
 .social-buttons {
     display: flex;
     flex-direction: column;
@@ -157,7 +183,7 @@ input[type="password"] {
     padding: 10px;
     border-radius: 6px;
     text-decoration: none;
-    color: #111111;
+    color: #111;
     font-size: 13px;
 }
 
@@ -165,31 +191,24 @@ input[type="password"] {
     width: 18px;
 }
 
-/* SIGNUP TEXT */
-.signup-text {
-    margin-top: 20px;
+/* ================= LINKS / BACK ================= */
+.login-text,
+.signup-text,
+.back {
     text-align: center;
+    margin-top: 15px;
     font-size: 13px;
 }
 
-.signup-text a {
+.login-text a,
+.signup-text a,
+.back a {
     color: #4f46e5;
     font-weight: 600;
     text-decoration: none;
 }
 
-/* RIGHT IMAGE */
-.right {
-    width: 50%;
-}
-
-.right img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-/* RESPONSIVE */
+/* ================= RESPONSIVE ================= */
 @media (max-width: 900px) {
     .right {
         display: none;
