@@ -20,15 +20,15 @@
 
 body {
     margin: 0;
-    height: 100vh;
+    min-height: 100vh;
     background: #f3f4f6;
 }
 
-/* PAGE SWITCH */
 .page {
     display: none;
-    height: 100vh;
+    min-height: 100vh;
 }
+
 .page.active {
     display: flex;
 }
@@ -51,14 +51,15 @@ body {
     border-bottom-left-radius: 100px;
 }
 
-/* CARD */
 .wrapper {
-    width: 360px;
+    width: 100%;
+    max-width: 360px;
     background: #ffffff;
     padding: 28px;
     border-radius: 14px;
     box-shadow: 0 20px 40px rgba(0,0,0,0.08);
 }
+
 
 /* TEXT */
 h1 {
@@ -195,15 +196,23 @@ a:hover {
     background: #f9fafb;
 }
 
-/* RESPONSIVE */
 @media(max-width:900px){
-    .right{display:none;}
-    .left{width:100%;}
+    .right{
+        display:none;
+    }
+    .left{
+        width:100%;
+        justify-content:center;
+        padding: 20px;
+    }
 }
+
 </style>
 </head>
 
 <body>
+
+    
 
 <!-- ================= LOGIN ================= -->
 <div class="page active" id="loginPage">
@@ -299,6 +308,8 @@ function toggle(id,icon){
     }
 }
 </script>
+
+
 
 </body>
 </html>
